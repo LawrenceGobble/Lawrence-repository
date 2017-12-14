@@ -1,0 +1,41 @@
+print "hello ruby!\n";
+
+
+print <<EOF
+  Let me try.
+  the sceond line.
+EOF
+
+
+BEGIN {
+  puts "here"
+}
+
+name="lawrence";
+
+puts "#{name+" "}"+"test:"+"#{3*8**2+7*8**1+7}";
+
+ary=["lawrence",171,62,"scau"];
+ary<<0377;
+puts ary;
+
+colors={"red"=>1,"green"=>2,"blue"=>3 }
+colors.each do |key,value|
+  puts "#{key}"+" is "+"#{value}"+"\n";
+end
+
+length=gets.chomp.to_i;
+puts length.is_a?(Numeric);
+num=Array.new;
+i=0
+while i < length do
+ num<<gets.chomp
+i+=1
+end
+puts num;
+
+def test(a,b,&block)
+   puts(a)
+   block.call(b)
+end
+test("lawrence","test:"){|i| puts i+"Hello World!"}
